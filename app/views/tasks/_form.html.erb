@@ -1,21 +1,11 @@
 <div class="row">
-  <div class="col-xs-12"></div>
-</div>
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-8 col-md-offset-2"></div>
-</div>  
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-6"></div>
-</div>  
-   <%= form_for(task) do |f| %>
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-6">
+    <%= form_for(task) do |f| %>
       <% if task.errors.any? %>
         <div id="error_explanation">
           <ul>
             <% task.errors.full_messages.each do |task| %>
-              <li><%= task %></li>
+                <li><%= task %></li>
             <% end %>
           </ul>
         </div>
@@ -33,3 +23,5 @@
 
       <%= f.submit 'タスクの追加', class: 'btn btn-primary' %>
     <% end %>
+  </div>
+</div>  
