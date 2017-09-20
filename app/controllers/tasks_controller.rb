@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all.page(params[:page])
+    @user = current_user
   end
   
   def show
