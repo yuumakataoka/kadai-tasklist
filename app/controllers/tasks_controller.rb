@@ -14,7 +14,6 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new(task_params)
     @task = current_user.tasks.build(task_params)
     
     if @task.save
@@ -52,7 +51,7 @@ class TasksController < ApplicationController
   private
   
   def set_task
-    @task = current_user.tasks.find_by(params[:id])
+    @task = current_user.tasks.find_by(user_id: params[:id])
     unless @task
       redirect_to root_url
     end  
